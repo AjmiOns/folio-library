@@ -30,13 +30,26 @@ npm run start:dev
 | PATCH | `/books/recover/:id` | Admin |
 | GET | `/authors/all`, `/authors/all/:id` | Authentifié |
 | POST/DELETE | `/authors/add` · `/authors/delete/:id` | Admin |
+| GET | `/categories/all` | Authentifié |
+| POST/DELETE | `/categories/add` · `/categories/delete/:id` | Admin |
 | GET | `/favorite/all` | Authentifié |
 | POST | `/favorite/add/:bookId` | Authentifié |
 | DELETE | `/favorite/delete/:bookId` et `/favorite/add/:bookId` | Authentifié |
 
 `signin` accepte `{ "login": "<email ou username>", "password": "…" }` et renvoie `{ accessToken, user }`.
 
+## Données de démonstration
+
+```bash
+npx ts-node src/seed.ts               # 100 livres, 9 catégories, couvertures Open Library
+npx ts-node src/seed.ts --no-covers   # sans couvertures (hors-ligne)
+```
+Le script est idempotent : relancé, il complète la catégorie et la couverture des livres qui n'en ont pas, sans doublon.
+
 ## Choix techniques à connaître
+
+- **Catégories** : un livre appartient à une catégorie (facultative). Supprimer une catégorie met ses livres en « Sans catégorie ».
+- **Couvertures** : `image` accepte un fichier uploadé ou une URL. Sans image, une couverture est générée à partir du titre.
 
 - **PostgreSQL** via `pg` (au lieu de MySQL). La table `user` s'appelle `users` (mot réservé).
 - **helmet** et **morgan** sont branchés directement dans `main.ts` : les wrappers `@nest-middlewares/*` sont dépréciés et incompatibles avec helmet 8.
