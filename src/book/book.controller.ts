@@ -55,6 +55,7 @@ export class BookController {
   }
 
   @Get('stats')
+  @Roles(UserRole.ADMIN)
   stats() {
     return this.service.stats();
   }
