@@ -206,7 +206,7 @@
     ['#/authors', 'bi-people', 'Authors'],
     ['#/categories', 'bi-tags', 'Categories'],
     ['#/favorites', 'bi-heart', 'Favorites'],
-    ['#/stats', 'bi-bar-chart-line', 'Statistics'],
+    ['#/stats', 'bi-bar-chart-line', 'Statistics', true], // true = admin only
   ];
 
   function renderNav(hash) {
@@ -218,7 +218,7 @@
           <i class="bi bi-list text-white fs-2"></i></button>
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav me-auto gap-1">
-            ${NAV.map(([h, ic, label]) => `<li class="nav-item"><a class="nav-link ${h === hash ? 'active' : ''}" href="${h}"><i class="bi ${ic} me-1"></i>${label}</a></li>`).join('')}
+            ${NAV.filter(([, , , adminOnly]) => !adminOnly || isAdmin()).map(([h, ic, label]) => `<li class="nav-item"><a class="nav-link ${h === hash ? 'active' : ''}" href="${h}"><i class="bi ${ic} me-1"></i>${label}</a></li>`).join('')}
           </ul>
           <div class="dropdown mt-2 mt-md-0">
             <button class="user-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -247,6 +247,7 @@
     const isAuthPage = hash === '#/login' || hash === '#/signup';
     if (!state.token && !isAuthPage) { location.hash = '#/login'; return; }
     if (state.token && isAuthPage) { location.hash = '#/books'; return; }
+    if (hash === '#/stats' && !isAdmin()) { location.hash = '#/books'; return; }
 
     state.charts.forEach((c) => c.destroy());
     state.charts = [];
