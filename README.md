@@ -456,3 +456,13 @@ folio-library/
 
 - Cover images from the [Open Library Covers API](https://openlibrary.org/dev/docs/api/covers).
 - UI: [Bootstrap](https://getbootstrap.com), [Bootstrap Icons](https://icons.getbootstrap.com), [Chart.js](https://www.chartjs.org); fonts Newsreader and Public Sans.
+
+---
+## 👩‍💻 Author
+
+Ajmi Ons
+Cloud Infrastructure Management Engineering Student at TEK-UP University, Tunisia.
+
+🐙 GitHub: (https://github.com/AjmiOns)
+💼 LinkedIn: (https://www.linkedin.com/in/ons-ajmi--/)
+  
