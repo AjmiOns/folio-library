@@ -5,6 +5,8 @@
 **A secure REST API (NestJS · TypeORM · PostgreSQL) with a polished Bootstrap + Chart.js frontend.**
 Browse a catalog grouped by category, manage favorites, and run the library as an administrator.
 
+Built by **Ajmi Ons** · [GitHub](https://github.com/AjmiOns) · [LinkedIn](https://www.linkedin.com/in/ons-ajmi--/)
+
 ![NestJS](https://img.shields.io/badge/NestJS-11-E0234E?logo=nestjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16+-4169E1?logo=postgresql&logoColor=white)
@@ -36,6 +38,7 @@ Browse a catalog grouped by category, manage favorites, and run the library as a
 12. [Configuration](#configuration)
 13. [Design decisions](#design-decisions)
 14. [Known limitations and roadmap](#known-limitations-and-roadmap)
+15. [Author](#author)
 
 ---
 
@@ -121,7 +124,7 @@ The backend serves both the REST API and the single-page frontend, so one comman
 ### 1. Install
 
 ```bash
-git clone https://github.com/<your-username>/folio-library.git
+git clone https://github.com/AjmiOns/folio-library.git
 cd folio-library
 npm install
 ```
@@ -454,15 +457,18 @@ folio-library/
 
 ## Credits
 
+- Course project: **CIMP NestJS** — specification by Nidhal Jelassi.
 - Cover images from the [Open Library Covers API](https://openlibrary.org/dev/docs/api/covers).
 - UI: [Bootstrap](https://getbootstrap.com), [Bootstrap Icons](https://icons.getbootstrap.com), [Chart.js](https://www.chartjs.org); fonts Newsreader and Public Sans.
 
 ---
-## 👩‍💻 Author
 
-Ajmi Ons
+## Author
+
+**Ajmi Ons**<br>
 Cloud Infrastructure Management Engineering Student at TEK-UP University, Tunisia.
 
-🐙 GitHub: (https://github.com/AjmiOns)
-💼 LinkedIn: (https://www.linkedin.com/in/ons-ajmi--/)
-  
+- 🐙 GitHub: [AjmiOns](https://github.com/AjmiOns)
+- 💼 LinkedIn: [Ons Ajmi](https://www.linkedin.com/in/ons-ajmi--/)
+
+This project was designed and built as part of the **CIMP NestJS** course.
