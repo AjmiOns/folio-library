@@ -544,6 +544,73 @@
   }
 
   /* ======================= categories ======================= */
+  /* ---- category banner illustrations (inline SVG, chosen from the category name) ---- */
+  const THEMES = {
+  "crime": {
+    "a": "#2a2f45",
+    "b": "#14172a",
+    "svg": "<g fill=\"none\" stroke=\"#fff\" stroke-opacity=\".28\" stroke-width=\"8\" stroke-linecap=\"round\"><circle cx=\"300\" cy=\"68\" r=\"40\"/><path d=\"M329 97 L368 136\" stroke-width=\"12\"/></g><g fill=\"none\" stroke=\"#fff\" stroke-opacity=\".2\" stroke-width=\"2\" stroke-linecap=\"round\"><ellipse cx=\"300\" cy=\"68\" rx=\"8\" ry=\"12\"/><ellipse cx=\"300\" cy=\"68\" rx=\"16\" ry=\"22\"/><ellipse cx=\"300\" cy=\"68\" rx=\"24\" ry=\"30\"/></g><g fill=\"#fff\" fill-opacity=\".3\"><circle cx=\"190\" cy=\"40\" r=\"2\"/><circle cx=\"215\" cy=\"112\" r=\"2\"/><circle cx=\"240\" cy=\"28\" r=\"1.5\"/></g>"
+  },
+  "english": {
+    "a": "#2a4b78",
+    "b": "#14284a",
+    "svg": "<g fill=\"#fff\" fill-opacity=\".2\"><rect x=\"292\" y=\"52\" width=\"32\" height=\"98\"/><polygon points=\"292,52 308,14 324,52\"/><rect x=\"286\" y=\"46\" width=\"44\" height=\"8\"/><rect x=\"326\" y=\"100\" width=\"70\" height=\"50\"/><rect x=\"214\" y=\"115\" width=\"76\" height=\"35\"/></g><circle cx=\"308\" cy=\"78\" r=\"9\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\".45\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M308 72 V78 H313\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\".45\" stroke-width=\"2\" stroke-linecap=\"round\"/><g fill=\"#fff\" fill-opacity=\".14\"><ellipse cx=\"232\" cy=\"38\" rx=\"30\" ry=\"9\"/><ellipse cx=\"366\" cy=\"32\" rx=\"26\" ry=\"8\"/></g>"
+  },
+  "essay": {
+    "a": "#2a6a68",
+    "b": "#133f45",
+    "svg": "<g fill=\"#fff\" fill-opacity=\".2\"><polygon points=\"214,52 300,18 386,52\"/><rect x=\"214\" y=\"52\" width=\"172\" height=\"9\"/><rect x=\"224\" y=\"64\" width=\"14\" height=\"76\"/><rect x=\"260\" y=\"64\" width=\"14\" height=\"76\"/><rect x=\"296\" y=\"64\" width=\"14\" height=\"76\"/><rect x=\"332\" y=\"64\" width=\"14\" height=\"76\"/><rect x=\"368\" y=\"64\" width=\"14\" height=\"76\"/><rect x=\"214\" y=\"140\" width=\"172\" height=\"10\"/></g>"
+  },
+  "frClassic": {
+    "a": "#7a2f4a",
+    "b": "#3f1528",
+    "svg": "<polygon points=\"278,150 292,108 299,68 306,30 310,10 314,30 321,68 328,108 342,150 330,150 318,118 302,118 290,150\" fill=\"#fff\" fill-opacity=\".24\"/><g fill=\"#fff\" fill-opacity=\".34\"><rect x=\"292\" y=\"106\" width=\"36\" height=\"4\"/><rect x=\"299\" y=\"66\" width=\"22\" height=\"4\"/></g><circle cx=\"228\" cy=\"38\" r=\"14\" fill=\"#fff\" fill-opacity=\".12\"/>"
+  },
+  "frModern": {
+    "a": "#37627f",
+    "b": "#1a3550",
+    "svg": "<path d=\"M246 46 H354 V150 H246 Z M285 150 V102 a15 15 0 0 1 30 0 V150 Z\" fill-rule=\"evenodd\" fill=\"#fff\" fill-opacity=\".22\"/><rect x=\"240\" y=\"38\" width=\"120\" height=\"10\" fill=\"#fff\" fill-opacity=\".28\"/><g fill=\"#fff\" fill-opacity=\".3\"><circle cx=\"200\" cy=\"40\" r=\"2\"/><circle cx=\"380\" cy=\"30\" r=\"2\"/><circle cx=\"222\" cy=\"120\" r=\"1.5\"/></g>"
+  },
+  "scifi": {
+    "a": "#3b2d85",
+    "b": "#161040",
+    "svg": "<g fill=\"#fff\" fill-opacity=\".7\"><circle cx=\"190\" cy=\"30\" r=\"1.6\"/><circle cx=\"225\" cy=\"120\" r=\"1.4\"/><circle cx=\"250\" cy=\"60\" r=\"1.8\"/><circle cx=\"372\" cy=\"26\" r=\"1.5\"/><circle cx=\"386\" cy=\"115\" r=\"1.6\"/><circle cx=\"340\" cy=\"136\" r=\"1.2\"/></g><circle cx=\"305\" cy=\"72\" r=\"32\" fill=\"#fff\" fill-opacity=\".2\"/><ellipse cx=\"305\" cy=\"72\" rx=\"62\" ry=\"13\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\".4\" stroke-width=\"3\" stroke-linecap=\"round\" transform=\"rotate(-18 305 72)\"/><circle cx=\"238\" cy=\"40\" r=\"8\" fill=\"#fff\" fill-opacity=\".18\"/>"
+  },
+  "stage": {
+    "a": "#8a4a22",
+    "b": "#4e2410",
+    "svg": "<g fill=\"#fff\" fill-opacity=\".2\"><circle cx=\"285\" cy=\"72\" r=\"34\"/><circle cx=\"342\" cy=\"88\" r=\"30\" fill-opacity=\".14\"/></g><g fill=\"none\" stroke=\"#fff\" stroke-opacity=\".55\" stroke-width=\"3\" stroke-linecap=\"round\"><path d=\"M272 64 q6 -6 12 0\"/><path d=\"M290 64 q6 -6 12 0\"/><path d=\"M270 82 q16 18 32 0\"/><path d=\"M330 84 q6 6 12 0\"/><path d=\"M348 84 q6 6 12 0\"/><path d=\"M330 108 q15 -14 30 0\"/></g><g fill=\"#fff\" fill-opacity=\".35\"><circle cx=\"208\" cy=\"36\" r=\"2\"/><circle cx=\"232\" cy=\"118\" r=\"1.6\"/><circle cx=\"388\" cy=\"40\" r=\"1.6\"/></g>"
+  },
+  "world": {
+    "a": "#2f7355",
+    "b": "#163f30",
+    "svg": "<g fill=\"none\" stroke=\"#fff\" stroke-opacity=\".36\" stroke-width=\"3\" stroke-linecap=\"round\"><circle cx=\"305\" cy=\"75\" r=\"52\"/><ellipse cx=\"305\" cy=\"75\" rx=\"22\" ry=\"52\"/><ellipse cx=\"305\" cy=\"75\" rx=\"40\" ry=\"52\" stroke-opacity=\".2\"/><path d=\"M253 75 H357 M262 48 H348 M262 102 H348\" stroke-width=\"2\" stroke-opacity=\".26\"/></g><path d=\"M190 118 Q240 70 285 98\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\".42\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-dasharray=\"6 6\"/><polygon points=\"190,118 206,108 200,124\" fill=\"#fff\" fill-opacity=\".5\"/>"
+  },
+  "youth": {
+    "a": "#a06a1d",
+    "b": "#5a3610",
+    "svg": "<g fill=\"none\" stroke=\"#fff\" stroke-opacity=\".36\" stroke-width=\"3\" stroke-linecap=\"round\"><circle cx=\"310\" cy=\"75\" r=\"46\"/><circle cx=\"310\" cy=\"75\" r=\"36\" stroke-opacity=\".18\" stroke-width=\"2\"/></g><polygon points=\"310,30 318,67 355,75 318,83 310,120 302,83 265,75 302,67\" fill=\"#fff\" fill-opacity=\".26\"/><path d=\"M180 128 Q215 96 245 118 T262 100\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\".4\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-dasharray=\"6 6\"/><path d=\"M254 92 l12 12 m0 -12 l-12 12\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\".55\" stroke-width=\"3\" stroke-linecap=\"round\"/>"
+  },
+  "fallback": {
+    "a": "#3a4a6a",
+    "b": "#1b2a41",
+    "svg": "<g fill=\"#fff\" fill-opacity=\".2\"><path d=\"M310 50 Q270 38 232 52 V112 Q270 98 310 112 Z\"/><path d=\"M310 50 Q350 38 388 52 V112 Q350 98 310 112 Z\"/></g><path d=\"M310 50 V112\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\".35\" stroke-width=\"2\" stroke-linecap=\"round\"/>"
+  }
+}
+;
+  const THEME_RULES = [
+    [/sci(ence)?[ -]?fi|fantasy|space/i, 'scifi'],
+    [/crime|mystery|detective|thriller|policier/i, 'crime'],
+    [/theat|poet|poem|drama|play/i, 'stage'],
+    [/essay|philosoph/i, 'essay'],
+    [/modern french|contemporary french|french modern/i, 'frModern'],
+    [/french|france/i, 'frClassic'],
+    [/english|anglo|british|american|\buk\b/i, 'english'],
+    [/world|international|foreign|global/i, 'world'],
+    [/youth|adventure|children|kids|young/i, 'youth'],
+  ];
+  const themeOf = (nom) => THEMES[(THEME_RULES.find(([re]) => re.test(nom)) || [null, 'fallback'])[1]];
+
   async function viewCategories() {
     $('#app').innerHTML = `
       <div class="page-head"><div><h1>Categories</h1></div>
@@ -566,9 +633,10 @@
     const card = ({ id, nom, books, editable }) => {
       // books with a real cover image first, so the stack looks good
       const stack = [...books].sort((a, b) => !!b.image - !!a.image).slice(0, 5);
+      const t = themeOf(nom);
       return `<div class="col"><article class="cat-card" style="--h:${hueOf(nom)}">
-        <div class="cat-banner">
-          <i class="bi bi-tag-fill cat-ico"></i>
+        <div class="cat-banner" style="background:linear-gradient(150deg,${t.a},${t.b})">
+          <svg class="cat-scene" viewBox="0 0 400 150" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">${t.svg}</svg>
           ${editable && isAdmin() ? `<div class="card-actions on-dark">
             <button class="icon-btn" data-action="edit-category" data-id="${id}" title="Rename" aria-label="Rename category"><i class="bi bi-pencil"></i></button>
             <button class="icon-btn" data-action="delete-category" data-id="${id}" title="Delete" aria-label="Delete category"><i class="bi bi-trash3"></i></button></div>` : ''}
