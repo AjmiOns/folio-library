@@ -5,8 +5,6 @@
 **A secure REST API (NestJS · TypeORM · PostgreSQL) with a polished Bootstrap + Chart.js frontend.**
 Browse a catalog grouped by category, manage favorites, and run the library as an administrator.
 
-Built by **Ajmi Ons** · [GitHub](https://github.com/AjmiOns) · [LinkedIn](https://www.linkedin.com/in/ons-ajmi--/)
-
 ![NestJS](https://img.shields.io/badge/NestJS-11-E0234E?logo=nestjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16+-4169E1?logo=postgresql&logoColor=white)
