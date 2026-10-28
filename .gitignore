@@ -2,3 +2,7 @@ node_modules
 dist
 .env
 uploads
+
+desktop.ini
+Thumbs.db
+scripts/debug-failure.png
